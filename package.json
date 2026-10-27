@@ -1,0 +1,10 @@
+{
+  "name": "kickoff",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Kickoff: a brainstorm tool that helps ICT student groups find a project idea they own.",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  }
+}

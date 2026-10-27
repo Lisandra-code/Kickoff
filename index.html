@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kickoff</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- The header stays the same on every screen. The step pills are filled in by main.js. -->
+  <header class="topbar">
+    <button type="button" class="logo" data-go="start">Kickoff</button>
+    <nav class="steps" id="steps" aria-label="Steps"></nav>
+  </header>
+
+  <!-- Every screen is drawn inside this element by one of the files in js/screens. -->
+  <main id="app"></main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
