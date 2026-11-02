@@ -23,7 +23,11 @@ export function renderBrainstorm(app, go) {
   const everyoneHasIdea = state.members.every((m) => ideaCount(m.id) > 0);
   const hasDirection = Boolean(state.ai.directions);
 
-  if (!draft.authorId) draft.authorId = state.members[0]?.id || '';
+  // New session (for example a new demo visitor): clear the form and start with someone who has no idea yet.
+  if (!state.members.some((m) => m.id === draft.authorId)) {
+    const firstWithoutIdea = state.members.find((m) => ideaCount(m.id) === 0);
+    draft = { authorId: (firstWithoutIdea || state.members[0])?.id || '', title: '', text: '' };
+  }
 
   app.innerHTML = `
     <div class="page wide">

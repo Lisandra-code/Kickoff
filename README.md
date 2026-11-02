@@ -43,6 +43,7 @@ Kickoff runs on one shared screen. Data is saved only in the browser of that dev
 | `js/main.js` | Decides which screen to show and draws the step pills. |
 | `js/state.js` | All data of one session, saved in the browser. |
 | `js/ui.js` | Small helpers, like making text safe for HTML. |
+| `js/demo.js` | Fills in an example project for demos (the "Try the demo" button on the start screen). |
 | `js/ai.js` | Sends the group's input to our server function and gets the answer back. |
 | `js/screens/*.js` | One file per screen: start, brief, group, brainstorm, vote, summary. |
 | `api/kickoff.js` | Server function on Vercel. Keeps the API key secret, holds the prompt and calls the AI model on Groq. |
@@ -65,4 +66,4 @@ Kickoff runs on one shared screen. Data is saved only in the browser of that dev
 
 ## AI use
 
-The website code was written with help from Claude (vibe coded), based on our low fidelity prototype and POC results. I checked it by testing every feature and going through each file. The AI inside Kickoff runs on Groq's free tier, with the open model Llama 3.3 70B. The prompt Kickoff sends to it is in `api/kickoff.js`.
+The website code was written with help from Claude (vibe coded), based on our low fidelity prototype and POC results. I checked it by testing every feature and going through each file. The AI inside Kickoff runs on Groq's free tier with an open model. The server picks the best available model from a list in `api/kickoff.js` and prints which one it uses in the terminal. The prompt Kickoff sends to it is in `api/kickoff.js`.
